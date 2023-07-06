@@ -1,0 +1,26 @@
+@import "./sass/variabels", "./sass/components";
+form {
+  width: 100vw;
+  height: 100vh;
+  .demo_app {
+    width: 40%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: -2px -2px 22px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px -2px 22px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: -2px -2px 22px -7px rgba(0, 0, 0, 0.75);
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    h2 {
+      color: $redcolor;
+    }
+    p{
+      margin: 5px
+    }
+    button {
+      @include filled_button($bluecolor);
+    }
+  }
+}

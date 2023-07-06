@@ -1,0 +1,77 @@
+@mixin filled_button($color) {
+  padding: 8px;
+  border: 1px solid transparent;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  background-color: $color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    @include stroke_button($color);
+  }
+}
+
+@mixin stroke_button($color) {
+  padding: 8px;
+  border: 1px solid $color;
+  outline: none;
+  color: $color;
+  border-radius: 5px;
+  background-color: transparent;
+  text-decoration: none;
+}
+.btn {
+  button,
+  a {
+    @include filled_button($redcolor);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      @include stroke_button($redcolor);
+    }
+  }
+}
+
+.btn-blue {
+  margin: 20px 0px;
+  button,
+  a {
+    @include filled_button($bluecolor);
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.red-light {
+  background-color: #{$redcolor}35;
+}
+.green-light {
+  background-color: #{$greencolor}35;
+}
+.blue-light {
+  background-color: #{$bluecolor}35;
+}
+
+.red {
+  background-color: #{$redcolor};
+}
+.green {
+  background-color: #{$greencolor};
+}
+.blue {
+  background-color: #{$bluecolor};
+}
+
+.red-c {
+  color: #{$redcolor};
+}
+.green-c {
+  color: #{$greencolor};
+}
+.blue-c {
+  color: #{$bluecolor};
+}
