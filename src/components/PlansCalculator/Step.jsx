@@ -13,7 +13,7 @@ const Step = () => {
     setInstallment(!installment);
   };
   useEffect(() => {
-    setPrice({ ...price, unit_amount: StepByStepGross().toFixed(2) * 100 });
+    setPrice({ ...price, unit_amount: parseInt(StepByStepGross().toFixed(2) * 100 )});
     setProduct({ name: " 1 chapter" });
     setChapters(1);
     modifyState("type", "cash");

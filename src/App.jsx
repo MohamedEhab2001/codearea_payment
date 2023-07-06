@@ -16,7 +16,6 @@ const App = () => {
     if (data) {
       setSuccess(true);
       setApp({ ...data.demo });
-      console.log(data.demo);
     }
   };
 

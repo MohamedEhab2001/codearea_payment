@@ -7,7 +7,7 @@ const Confidinet = () => {
   useEffect(() => {
     setPrice({
       ...price,
-      unit_amount: (ChaptersGross(2).toFixed(2) / 2) * 100,
+      unit_amount: parseInt((ChaptersGross(2).toFixed(2) / 2) * 100),
     });
     setProduct({ name: " 1 chapter" });
     setChapters(2);

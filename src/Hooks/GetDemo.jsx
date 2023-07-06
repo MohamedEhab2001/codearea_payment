@@ -3,7 +3,7 @@ import { Base } from "../Helpers/constants";
 import { Store } from "react-notifications-component";
 import { useState } from "react";
 const useGetDemo = () => {
-  const notify = (message , duration = 2000) => {
+  const notify = (message, duration = 2000) => {
     Store.addNotification({
       title: message.title,
       message: message.msg,
@@ -38,19 +38,23 @@ const useGetDemo = () => {
       const res = await axios(`${Base}demo/${num}`);
       return res.data;
     } catch (error) {
+      console.log(error);
       if (error.response.status === 404) {
-        notify({
-          title: error.response.data.msg,
-          msg: error.response.data.fixIt,
-          type: "danger",
-        },4000);
+        notify(
+          {
+            title: error.response.data.msg,
+            msg: error.response.data.fixIt,
+            type: "danger",
+          },
+          4000
+        );
       }
     }
   };
 
   const [app, setApp] = useState({});
 
-  return { getInfo, app, setApp , notify};
+  return { getInfo, app, setApp, notify };
 };
 
 export default useGetDemo;
